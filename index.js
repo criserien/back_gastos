@@ -6,11 +6,13 @@ const cors = require('cors'); // 1. Importar
 
 // 2. Configurar CORS para permitir tu frontend de Angular
 const corsOptions = {
-  origin: 'http://localhost:4200', // El puerto donde corre Angular
+  origin: [
+    'http://localhost:4200',
+    'https://contabilidad-mu-seven.vercel.app'
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
-
 app.use(cors(corsOptions)); // 3. Usar el middleware
 
 // Middleware opcional para que el servidor entienda datos en formato JSON
